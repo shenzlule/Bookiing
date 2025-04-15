@@ -8,9 +8,9 @@
     <LinearLayout
         android:id="@+id/contactInfoLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_alignParentTop="true"
         android:gravity="center_horizontal"
         android:padding="16dp">
 
@@ -47,5 +47,246 @@
             android:textSize="14sp"
             android:paddingBottom="12dp" />
     </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/contactInfoLayout"
+
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/contactInfoLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactInfoLayout"
+            android:orientation="horizontal"
+            android:layout_gravity="start"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/profile_image1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:src="@drawable/ic_launcher_foreground"
+                android:scaleType="fitCenter"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/contactInfoLayout"
+                android:orientation="vertical"
+                android:layout_gravity="start"
+                android:padding="16dp">
+                <TextView
+                    android:id="@+id/profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Abenawe Racheal
+"
+                    android:textColor="@color/status_bar_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Email -->
+                <TextView
+                    android:id="@+id/profile_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone:0775349335"
+                    android:textSize="16sp"
+                    android:textColor="@color/status_bar_color"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactInfoLayout"
+            android:orientation="horizontal"
+            android:layout_gravity="start"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/profile_image2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:src="@drawable/ic_launcher_foreground"
+                android:scaleType="fitCenter"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/contactInfoLayout"
+                android:orientation="vertical"
+                android:layout_gravity="start"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ayebale John"
+                    android:textColor="@color/status_bar_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Email -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone:0787645523"
+                    android:textSize="16sp"
+                    android:textColor="@color/status_bar_color"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactInfoLayout"
+            android:orientation="horizontal"
+            android:layout_gravity="start"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/profile_image3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:src="@drawable/ic_launcher_foreground"
+                android:scaleType="fitCenter"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/contactInfoLayout"
+                android:orientation="vertical"
+                android:layout_gravity="start"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KATUSIIME ROMINATE"
+                    android:textColor="@color/status_bar_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Email -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone:0770933171"
+                    android:textSize="16sp"
+                    android:textColor="@color/status_bar_color"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contactInfoLayout"
+            android:orientation="horizontal"
+            android:layout_gravity="start"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/profile_image4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:src="@drawable/ic_launcher_foreground"
+                android:scaleType="fitCenter"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/contactInfoLayout"
+                android:orientation="vertical"
+                android:layout_gravity="start"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KONIHIIRE SHARON"
+                    android:textColor="@color/status_bar_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Email -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone:0781061216"
+                    android:textSize="16sp"
+                    android:textColor="@color/status_bar_color"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="start"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/profile_image5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:src="@drawable/ic_launcher_foreground"
+                android:scaleType="fitCenter"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/contactInfoLayout"
+                android:orientation="vertical"
+                android:layout_gravity="start"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kutosi Mark "
+                    android:textColor="@color/status_bar_color"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Email -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone:0740886291"
+                    android:textSize="16sp"
+                    android:textColor="@color/status_bar_color"
+                    android:layout_marginBottom="16dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

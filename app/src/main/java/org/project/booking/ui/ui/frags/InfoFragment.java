@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.bumptech.glide.Glide;
+import com.example.booking.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -90,6 +92,31 @@ public class InfoFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =inflater.inflate(com.example.booking.R.layout.fragment_about, container, false);
 
+        ImageView imageView1 ,imageView2,imageView3,imageView4;
+        imageView1=view.findViewById(R.id.profile_image1);
+        imageView2=view.findViewById(R.id.profile_image2);
+        imageView3=view.findViewById(R.id.profile_image3);
+        imageView4=view.findViewById(R.id.profile_image4);
+        Glide.with(this)
+                .load(R.drawable.image1)
+                .placeholder(R.drawable.ic_launcher_background) // Default image
+                .circleCrop() // Ensures the image is circular
+                .into(imageView1);
+        Glide.with(this)
+                .load(R.drawable.image2)
+                .placeholder(R.drawable.ic_launcher_background) // Default image
+                .circleCrop() // Ensures the image is circular
+                .into(imageView2);
+        Glide.with(this)
+                .load(R.drawable.image3)
+                .placeholder(R.drawable.ic_launcher_background) // Default image
+                .circleCrop() // Ensures the image is circular
+                .into(imageView3);
+        Glide.with(this)
+                .load(R.drawable.image4)
+                .placeholder(R.drawable.ic_launcher_background) // Default image
+                .circleCrop() // Ensures the image is circular
+                .into(imageView4);
 
         return  view;
     }
