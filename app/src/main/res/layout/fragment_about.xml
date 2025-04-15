@@ -45,13 +45,30 @@
             android:layout_height="wrap_content"
             android:text="By using MyHostel, you agree to our terms and conditions, which ensure fair and respectful use of the platform for both hostel owners and users."
             android:textSize="14sp"
+            android:layout_margin="2dp"
             android:paddingBottom="12dp" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ttco"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:orientation="vertical"
+        android:layout_below="@id/contactInfoLayout"
+        android:gravity="center_horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Contact Info"
+            android:textSize="20sp"
 
+            android:textStyle="bold"
+            />
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_below="@id/contactInfoLayout"
+        android:layout_below="@id/ttco"
 
         android:layout_height="wrap_content">
     <LinearLayout
@@ -71,8 +88,8 @@
             android:padding="16dp">
             <ImageView
                 android:id="@+id/profile_image1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
 
                 android:src="@drawable/ic_launcher_foreground"
                 android:scaleType="fitCenter"/>
@@ -80,7 +97,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@id/contactInfoLayout"
                 android:orientation="vertical"
                 android:layout_gravity="start"
                 android:padding="16dp">
@@ -88,10 +104,9 @@
                     android:id="@+id/profile_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Abenawe Racheal
-"
+                    android:text="Abenawe Racheal"
                     android:textColor="@color/status_bar_color"
-                    android:textSize="21sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
 
@@ -99,9 +114,9 @@
                 <TextView
                     android:id="@+id/profile_email"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="13dp"
                     android:text="Phone:0775349335"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textColor="@color/status_bar_color"
                     android:layout_marginBottom="16dp"/>
             </LinearLayout>
@@ -117,8 +132,8 @@
             android:padding="16dp">
             <ImageView
                 android:id="@+id/profile_image2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
 
                 android:src="@drawable/ic_launcher_foreground"
                 android:scaleType="fitCenter"/>
@@ -135,16 +150,16 @@
                     android:layout_height="wrap_content"
                     android:text="Ayebale John"
                     android:textColor="@color/status_bar_color"
-                    android:textSize="21sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
 
                 <!-- Email -->
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="13dp"
                     android:text="Phone:0787645523"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textColor="@color/status_bar_color"
                     android:layout_marginBottom="16dp"/>
             </LinearLayout>
@@ -161,8 +176,8 @@
             android:padding="16dp">
             <ImageView
                 android:id="@+id/profile_image3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
 
                 android:src="@drawable/ic_launcher_foreground"
                 android:scaleType="fitCenter"/>
@@ -179,16 +194,16 @@
                     android:layout_height="wrap_content"
                     android:text="KATUSIIME ROMINATE"
                     android:textColor="@color/status_bar_color"
-                    android:textSize="21sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
 
                 <!-- Email -->
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="13dp"
                     android:text="Phone:0770933171"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textColor="@color/status_bar_color"
                     android:layout_marginBottom="16dp"/>
             </LinearLayout>
@@ -206,8 +221,8 @@
             android:padding="16dp">
             <ImageView
                 android:id="@+id/profile_image4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
 
                 android:src="@drawable/ic_launcher_foreground"
                 android:scaleType="fitCenter"/>
@@ -224,16 +239,16 @@
                     android:layout_height="wrap_content"
                     android:text="KONIHIIRE SHARON"
                     android:textColor="@color/status_bar_color"
-                    android:textSize="21sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
 
                 <!-- Email -->
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="13dp"
                     android:text="Phone:0781061216"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textColor="@color/status_bar_color"
                     android:layout_marginBottom="16dp"/>
             </LinearLayout>
@@ -250,9 +265,8 @@
             android:padding="16dp">
             <ImageView
                 android:id="@+id/profile_image5"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-
+                android:layout_width="75dp"
+                android:layout_height="75dp"
                 android:src="@drawable/ic_launcher_foreground"
                 android:scaleType="fitCenter"/>
 
@@ -268,16 +282,16 @@
                     android:layout_height="wrap_content"
                     android:text="Kutosi Mark "
                     android:textColor="@color/status_bar_color"
-                    android:textSize="21sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
 
                 <!-- Email -->
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="13dp"
                     android:text="Phone:0740886291"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:textColor="@color/status_bar_color"
                     android:layout_marginBottom="16dp"/>
             </LinearLayout>
