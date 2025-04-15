@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Muwafu Hostel",
+    "contact": "0774498788",
+    "location": "Makerere, Kampala",
+    "features": ["Free WiFi", "CCTV Security"],
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Kasana Hostels",
+    "contact": "0701887654",
+    "location": "Kyambogo, Kampala",
+    "features": ["Free WiFi", "Free Breakfast"],
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Entebbe View Hostel",
+    "contact": "0789356123",
+    "location": "Entebbe, Wakiso",
+    "features": ["Airport Pickup", "Lake View"],
+    "rating": 3
+  },
+  {
+    "id": 4,
+    "name": "Mbale City Hostel",
+    "contact": "0393123456",
+    "location": "Mbale Town, Eastern Uganda",
+    "features": ["Free WiFi", "Mountain View"],
+    "rating": 4
+  },
+  {
+    "id": 5,
+    "name": "Gulu Student Hostel",
+    "contact": "0756142231",
+    "location": "Gulu City",
+    "features": ["Study Rooms", "Free Laundry"],
+    "rating": 4
+  },
+  {
+    "id": 6,
+    "name": "Fort Portal Backpackers",
+    "contact": "0788998876",
+    "location": "Fort Portal, Western Uganda",
+    "features": ["Nature Walks", "Free Brunch"],
+    "rating": 3
+  },
+  {
+    "id": 7,
+    "name": "Mbarara Royal Hostel",
+    "contact": "0704455123",
+    "location": "Mbarara City",
+    "features": ["Near Hospital", "Spacious Rooms"],
+    "rating": 5
+  },
+  {
+    "id": 8,
+    "name": "Jinja Nile Hostel",
+    "contact": "0776123456",
+    "location": "Jinja City",
+    "features": ["Near River Nile", "Cabs Available"],
+    "rating": 4
+  },
+  {
+    "id": 9,
+    "name": "Nsambya Comfort Hostel",
+    "contact": "0392445566",
+    "location": "Nsambya, Kampala",
+    "features": ["Air Conditioned", "Room Service"],
+    "rating": 3
+  },
+  {
+    "id": 10,
+    "name": "Kansanga Palace Hostel",
+    "contact": "0788123456",
+    "location": "Kansanga, Kampala",
+    "features": ["Cabs Available", "Balcony View"],
+    "rating": 4
+  }
+]

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_marginTop="0dp"
+        android:paddingHorizontal="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/status_bar_color"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textSize="26sp"
+                android:text="MyHostel App"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/hi"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+
+
+                android:layout_marginRight="7dp"
+                android:layout_centerVertical="true"
+
+
+                android:layout_toLeftOf="@id/profileImage"
+                android:textSize="15sp"
+                android:text="Hi,User!"
+                android:textColor="@color/white"
+                android:textStyle="normal"/>
+
+
+            <!-- Profile Picture (rounded) -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="41dp"
+                android:layout_height="41dp"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+
+                android:layout_marginRight="3px"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_launcher_foreground"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/rounded_image_border"/>
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<android.widget.RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="226dp"
+        android:layout_marginTop="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/viewview"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:background="@drawable/a11"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/titleview5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="116dp"
+                android:layout_marginBottom="72dp"
+                android:text="Sky Bar at Waldorf Astoria"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/viewview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RatingBar
+                android:id="@+id/ratingBar_view"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="305dp"
+                android:layout_marginBottom="49dp"
+                android:max="5"
+                android:numStars="5"
+                android:progressTint="#FF9800"
+                android:rating="4.5"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/viewview"
+                app:layout_constraintEnd_toEndOf="@+id/viewview"
+                app:layout_constraintStart_toStartOf="@+id/viewview" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</android.widget.RelativeLayout>
+    <RelativeLayout
+        android:layout_alignBottom="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/View_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/hotel_title_padding"
+            android:paddingRight="@dimen/hotel_title_padding"
+            android:paddingTop="@dimen/hotel_title_padding"
+            android:textAlignment="center"
+            android:textColor="@color/hotel_title"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/View_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/View_title"
+            android:textColor="@android:color/background_dark"
+            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
+            android:paddingLeft="@dimen/hotel_title_padding"
+            android:paddingRight="@dimen/hotel_title_padding"
+            android:textSize="15dp" />
+        <TextView
+            android:id="@+id/View_rating__"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/View_location"
+            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
+            android:paddingLeft="@dimen/hotel_title_padding"
+            android:textColor="@android:color/background_dark"
+            android:paddingRight="@dimen/hotel_title_padding"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/View_features"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/View_rating__"
+            android:paddingLeft="@dimen/hotel_title_padding"
+            android:paddingRight="@dimen/hotel_title_padding"
+            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15dp"
+            />
+        <TextView
+            android:id="@+id/View_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/View_features"
+            android:paddingLeft="@dimen/hotel_title_padding"
+            android:paddingRight="@dimen/hotel_title_padding"
+            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15dp"
+            />
+
+        <LinearLayout
+            android:layout_below="@id/View_contact"
+            android:id="@+id/l2"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:gravity="center"
+            android:layout_height="100dp">
+            <Button
+                android:id="@+id/View_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/View_contact"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/ic_hotel_overflow_margin_top"
+                android:background="@drawable/round"
+                android:scaleType="centerCrop"
+                android:text="Remove"
+                android:textColor="#ffffff"
+                android:layout_marginRight="5dp"
+                android:textSize="12dp"
+                android:typeface="monospace"
+                android:bottomRightRadius="20dp"
+                android:bottomLeftRadius="20dp"
+                android:topRightRadius="20dp"
+                android:topLeftRadius="20dp"
+                />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/View_rec"
+            android:layout_width="match_parent"
+            android:paddingTop="20dp"
+            android:text="Recommendations"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/l2"
+            android:paddingLeft="@dimen/hotel_title_padding"
+            android:paddingRight="@dimen/hotel_title_padding"
+            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
+            />
+
+    </RelativeLayout>
+
+    <include layout="@layout/rec_content_main" />
+
+
+
+</LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

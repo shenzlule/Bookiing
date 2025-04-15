@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/frag_bg"
+    android:padding="16dp">
+
+    <!-- About Section at the bottom -->
+    <LinearLayout
+        android:id="@+id/contactInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <!-- App Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MyHostel App"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <!-- About the App -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MyHostel is a convenient app that helps students and travelers find and book hostels with ease. View available rooms, amenities, and contact hostel managers directly."
+            android:textSize="14sp"
+            android:paddingBottom="12dp" />
+
+        <!-- Privacy Policy -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privacy Policy: Your information is securely handled and is only used for booking and communication purposes. We do not share your data with third parties."
+            android:textSize="14sp"
+            android:paddingBottom="12dp" />
+
+        <!-- Terms and Conditions -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="By using MyHostel, you agree to our terms and conditions, which ensure fair and respectful use of the platform for both hostel owners and users."
+            android:textSize="14sp"
+            android:paddingBottom="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>
