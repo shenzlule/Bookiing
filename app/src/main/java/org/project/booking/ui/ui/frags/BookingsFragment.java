@@ -132,9 +132,14 @@ public class BookingsFragment extends Fragment {
 
     public void refresh() {
 
-        List<Hostel> hostelList = new ArrayList<>();
-        hostelList=JsonUtils.loadHostelsFromAsset(getContext(), "hostels.json");
-        loadItems(hostelList);  // Reload the items when refreshing the fragment
+        try {
+            List<Hostel> hostelList = new ArrayList<>();
+            hostelList=JsonUtils.loadHostelsFromAsset(getContext(), "hostels.json");
+            loadItems(hostelList);  // Reload the items when refreshing the fragment
+        }catch (Exception e){
+            //do nothing
+        }
+
     }
 
 

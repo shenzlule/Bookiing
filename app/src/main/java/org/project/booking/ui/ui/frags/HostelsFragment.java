@@ -122,10 +122,14 @@ public class HostelsFragment extends Fragment {
 
 
     public void refresh() {
-
+        try {
         List<Hostel> hostelList = new ArrayList<>();
         hostelList=JsonUtils.loadHostelsFromAsset(getContext(), "hostels.json");
         loadItems(hostelList);  // Reload the items when refreshing the fragment
+
+        }catch (Exception e){
+            //do nothing
+        }
     }
 
     private void loadItems(List<Hostel> hostelList) {
