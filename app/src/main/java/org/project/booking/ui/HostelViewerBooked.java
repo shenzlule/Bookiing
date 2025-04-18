@@ -29,6 +29,7 @@ import org.project.booking.ui.models.ItemDao;
 import org.project.booking.ui.utils.JsonUtils;
 
 import java.util.List;
+import java.util.concurrent.Executors;
 
 public class HostelViewerBooked extends AppCompatActivity {
     public String hotelName ;
@@ -37,7 +38,7 @@ public class HostelViewerBooked extends AppCompatActivity {
 
     private ImageView profileImageView;
 
-    private TextView hi_txt;
+    private TextView hi_txt,roomtype,amount;
 
     private ItemDao itemDao;
 
@@ -102,6 +103,11 @@ public class HostelViewerBooked extends AppCompatActivity {
         View_features=findViewById(R.id.View_features);
         View view =findViewById(R.id.viewview);
 
+
+        roomtype=findViewById(R.id.roomtype);
+
+        amount=findViewById(R.id.amount);
+
         View_title2=findViewById(R.id.titleview5);
         View_title2.setText(hostel.getName());
 
@@ -112,6 +118,8 @@ public class HostelViewerBooked extends AppCompatActivity {
         View_features.setText("Features: "+hostel.getFeats());
 
 
+        getItemInBackground(hostelIndex,currentUser.getEmail());
+
 
 
         ratingBar.setRating(Float.parseFloat(hostel.getRating()));
@@ -120,13 +128,13 @@ public class HostelViewerBooked extends AppCompatActivity {
         if(hostel.getId() == 1){
 
 
-            view.setBackgroundResource(R.drawable.a1);
+            view.setBackgroundResource(R.drawable.campbell);
         }
         if(hostel.getId() == 2){
-            view.setBackgroundResource(R.drawable.a2); // fallback
+            view.setBackgroundResource(R.drawable.katonga); // fallback
         }
         if(hostel.getId() == 3){
-            view.setBackgroundResource(R.drawable.a3); // fallback
+            view.setBackgroundResource(R.drawable.bossa); // fallback
         }
         if(hostel.getId() == 4){
             view.setBackgroundResource(R.drawable.a4); // fallback
@@ -219,6 +227,24 @@ public class HostelViewerBooked extends AppCompatActivity {
 
 
     }
+    private void getItemInBackground(int itemNum, String userId) {
+        Executors.newSingleThreadExecutor().execute(() -> {
+            AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "app_database").build();
+            ItemDao itemDao = db.itemDao();
+
+            Item itemBooked = itemDao.getItemByUserIdAndHostelIndex(userId, itemNum);
+
+            // Switch back to main thread to update UI
+            runOnUiThread(() -> {
+                if (itemBooked != null) {
+                    amount.setText("Amount : UGX " + itemBooked.getAmount());
+                    roomtype.setText("Room Type: " + itemBooked.getRoomtype()); // assuming getRoomType() exists
+                } else {
+                }
+            });
+        });
+    }
+
 
     private void deleteItem(int itemNum,String ifuserr) {
         AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "app_database").build();
@@ -240,6 +266,16 @@ public class HostelViewerBooked extends AppCompatActivity {
                 });
             }
         }).start();
+
+    }
+
+    private Item GetItem(int itemNum,String ifuserr) {
+        AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "app_database").build();
+        ItemDao itemDao = db.itemDao();
+
+        return itemDao.getItemByUserIdAndHostelIndex( ifuserr,itemNum);
+
+
 
     }
 

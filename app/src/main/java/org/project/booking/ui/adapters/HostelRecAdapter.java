@@ -55,13 +55,13 @@ public class HostelRecAdapter extends RecyclerView.Adapter<HostelRecAdapter.Host
 
 
         if(hostel.getId() == 1){
-            holder.imageView.setImageResource(R.drawable.a1); // fallback
+            holder.imageView.setImageResource(R.drawable.campbell); // fallback
         }
         if(hostel.getId() == 2){
-            holder.imageView.setImageResource(R.drawable.a2); // fallback
+            holder.imageView.setImageResource(R.drawable.katonga); // fallback
         }
         if(hostel.getId() == 3){
-            holder.imageView.setImageResource(R.drawable.a3); // fallback
+            holder.imageView.setImageResource(R.drawable.bossa); // fallback
         }
         if(hostel.getId() == 4){
             holder.imageView.setImageResource(R.drawable.a4); // fallback

@@ -7,17 +7,20 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/myicon"
-        android:label="MyHostel App"
+        android:label="UMU ROOM BOOKING"
         android:roundIcon="@drawable/myicon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Booking"
         tools:targetApi="31">
-
         <activity
             android:name="org.project.booking.ui.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Booking">
+            android:theme="@style/Theme.Booking"/>
 
+        <activity
+            android:name="org.project.booking.ui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Booking">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,42 +28,23 @@
             </intent-filter>
         </activity>
 
-
-
-
-
-
         <activity
             android:name="org.project.booking.ui.HostelViewer"
             android:exported="true"
-            android:theme="@style/Theme.Booking">
-
-
-        </activity>
-
+            android:theme="@style/Theme.Booking"></activity>
         <activity
             android:name="org.project.booking.ui.HostelViewerBooked"
             android:exported="true"
-            android:theme="@style/Theme.Booking">
-
-
-        </activity>
-
+            android:theme="@style/Theme.Booking"></activity>
         <activity
             android:name="org.project.booking.ui.AuthSignInActivity"
             android:exported="true"
-            android:theme="@style/Theme.Booking">
-
-
-        </activity>
-
-
-
+            android:theme="@style/Theme.Booking"></activity>
         <activity android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" />
 
         <meta-data
             android:name="com.google.android.gms.auth.api.identity"
-            android:value="@string/default_web_client_id"/>
+            android:value="@string/default_web_client_id" />
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package org.project.booking.ui;
 
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -29,9 +30,10 @@ import org.project.booking.ui.models.Item;
 import org.project.booking.ui.utils.JsonUtils;
 
 import java.util.List;
+import java.util.Random;
 
 public class HostelViewer extends AppCompatActivity {
-    public String hotelName ;
+    public String hotelName;
 
     private RecyclerView recyclerView;
 
@@ -40,8 +42,6 @@ public class HostelViewer extends AppCompatActivity {
     private TextView hi_txt;
 
     private AppDatabase db;
-
-
 
 
     private FirebaseAuth mAuth;
@@ -53,7 +53,9 @@ public class HostelViewer extends AppCompatActivity {
         Intent intent = getIntent();
 
 
-        RatingBar ratingBar=findViewById(R.id.ratingBar_view);
+        Button btnSingleBedroom, btnDoubleBedroom, btnSingleSelf, btnDoubleSelf;
+
+        RatingBar ratingBar = findViewById(R.id.ratingBar_view);
 
         db = AppDatabase.getDatabase(this); // Initialize Room database
 
@@ -70,9 +72,8 @@ public class HostelViewer extends AppCompatActivity {
         profileImageView = findViewById(com.example.booking.R.id.profileImage);
 
 
-
         hi_txt = findViewById(R.id.hi);
-        int hostelIndex = intent.getIntExtra("indexx",1);
+        int hostelIndex = intent.getIntExtra("indexx", 1);
 
         // Load profile picture using Glide (make sure to include Glide in your dependencies)
         if (currentUser.getPhotoUrl() != null) {
@@ -84,61 +85,71 @@ public class HostelViewer extends AppCompatActivity {
         loadUserProfile();
         List<Hostel> hostelList = JsonUtils.loadHostelsFromAsset(this, "hostels.json");
 
-        Hostel hostel = hostelList.get(hostelIndex-1);
+        Hostel hostel = hostelList.get(hostelIndex - 1);
 
         //get the hostel
 
-        TextView View_contact,View_title,View_location,View_rating,View_features ,View_title2;
+        TextView View_contact, View_title, View_location, View_rating, View_features, View_title2;
 
-        View view =findViewById(R.id.viewview);
-        View_contact=findViewById(R.id.View_contact);
-        View_title=findViewById(R.id.View_title);
-        View_location=findViewById(R.id.View_location);
-        View_rating=findViewById(R.id.View_rating__);
-        View_features=findViewById(R.id.View_features);
-        View_title2=findViewById(R.id.titleview2);
+        View view = findViewById(R.id.viewview);
+        View_contact = findViewById(R.id.View_contact);
+        View_title = findViewById(R.id.View_title);
+        View_location = findViewById(R.id.View_location);
+        View_rating = findViewById(R.id.View_rating__);
+        View_features = findViewById(R.id.View_features);
+        View_title2 = findViewById(R.id.titleview2);
 
-        View_contact.setText("Contact: "+hostel.getContact());
+        View_contact.setText("Contact: " + hostel.getContact());
         View_title.setText(hostel.getName());
         View_title2.setText(hostel.getName());
         View_location.setText("Location: " + hostel.getLocation());
-        View_rating.setText("Rating: "+hostel.getRating());
-        View_features.setText("Features: "+hostel.getFeats());
+        View_rating.setText("Rating: " + hostel.getRating());
+        View_features.setText("Features: " + hostel.getFeats());
 
 
         ratingBar.setRating(Float.parseFloat(hostel.getRating()));
+
+        btnSingleBedroom = findViewById(R.id.btn_single_bedroom);
+        btnDoubleBedroom = findViewById(R.id.btn_double_bedroom);
+        btnSingleSelf = findViewById(R.id.btn_single_self);
+        btnDoubleSelf = findViewById(R.id.btn_double_self);
+
+        setButtonListener(btnSingleBedroom, "Single Bedroom", 1,hostelIndex);
+        setButtonListener(btnDoubleBedroom, "Double Bedroom", 2,hostelIndex);
+        setButtonListener(btnSingleSelf, "Single Self Contained Room", 3,hostelIndex);
+        setButtonListener(btnDoubleSelf, "Double Self Contained Room", 4,hostelIndex);
 
 
         if(hostel.getId() == 1){
 
 
-            view.setBackgroundResource(R.drawable.a1);
+            view.setBackgroundResource(R.drawable.campbell);
         }
         if(hostel.getId() == 2){
-            view.setBackgroundResource(R.drawable.a2); // fallback
+            view.setBackgroundResource(R.drawable.katonga); // fallback
         }
         if(hostel.getId() == 3){
-            view.setBackgroundResource(R.drawable.a3); // fallback
+            view.setBackgroundResource(R.drawable.bossa); // fallback
         }
-        if(hostel.getId() == 4){
+        if (hostel.getId() == 4) {
             view.setBackgroundResource(R.drawable.a4); // fallback
         }
-        if(hostel.getId() == 5){
+        if (hostel.getId() == 5) {
             view.setBackgroundResource(R.drawable.a5); // fallback
         }
-        if(hostel.getId() == 6){
+        if (hostel.getId() == 6) {
             view.setBackgroundResource(R.drawable.a6); // fallback
         }
-        if(hostel.getId() == 7){
+        if (hostel.getId() == 7) {
             view.setBackgroundResource(R.drawable.a7); // fallback
         }
-        if(hostel.getId() == 8){
+        if (hostel.getId() == 8) {
             view.setBackgroundResource(R.drawable.a8); // fallback
         }
-        if(hostel.getId() == 9){
+        if (hostel.getId() == 9) {
             view.setBackgroundResource(R.drawable.a11); // fallback
         }
-        if(hostel.getId() == 10){
+        if (hostel.getId() == 10) {
             view.setBackgroundResource(R.drawable.a9); // fallback
         }
 
@@ -152,16 +163,7 @@ public class HostelViewer extends AppCompatActivity {
 
 
 
-
-        Button View_book = findViewById(R.id.View_book);
-        View_book.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                saveItemToDatabase(hostelIndex);
-            }
-        });
     }
-
 
 
     @Override
@@ -177,7 +179,6 @@ public class HostelViewer extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }
-
 
 
     private void loadUserProfile() {
@@ -207,15 +208,11 @@ public class HostelViewer extends AppCompatActivity {
         }
 
 
-
-
-
     }
 
 
-
     // Save the item to the local database
-    private void saveItemToDatabase(int HostelIndex) {
+    private void saveItemToDatabase(int HostelIndex,int amount,String roomtype) {
 
         // Get the current logged-in user's email from Firebase
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -226,7 +223,7 @@ public class HostelViewer extends AppCompatActivity {
 
 
 // Create an Item object with the new fields
-        Item item = new Item(userId, HostelIndex);
+        Item item = new Item(userId, HostelIndex,amount,roomtype);
 
         new Thread(() -> {
             // Check if the item already exists
@@ -245,6 +242,41 @@ public class HostelViewer extends AppCompatActivity {
             }
         }).start();
 
+    }
+
+
+    private void setButtonListener(Button button, String roomType, int index,int hostelIndex) {
+        button.setOnClickListener(v -> {
+            int amount = generateRandomAmount(30000, 50000); // UGX range example
+
+            if (index == 2) {
+                amount = generateRandomAmount(50000, 70000); // UGX range example
+            }
+            if (index == 3) {
+                amount = generateRandomAmount(100000, 120000); // UGX range example
+            }
+            if (index == 4) {
+                amount = generateRandomAmount(120000, 200000); // UGX range example
+            }
+            showBookingDialog(hostelIndex,roomType, amount);
+        });
+    }
+
+    private int generateRandomAmount(int min, int max) {
+        return new Random().nextInt(max - min + 1) + min;
+    }
+
+
+    private void showBookingDialog(int hostelIndex,String roomType, int amount) {
+        new AlertDialog.Builder(this)
+                .setTitle("Confirm Booking")
+                .setMessage("Amount for " + roomType + ": UGX " + amount + "\nProceed to book?")
+                .setPositiveButton("Book", (dialog, which) -> {
+                    Toast.makeText(this, "Booked " + roomType + " for UGX " + amount, Toast.LENGTH_SHORT).show();
+                    saveItemToDatabase(hostelIndex,amount,roomType);
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
     }
 
 }
